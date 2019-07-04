@@ -1,0 +1,36 @@
+.system-icon > * {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.middle-menu {
+    position: absolute;
+    height: 49px;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.middle-navigator {
+    cursor: pointer;
+    display: inline-block;
+    height: 49px;
+    width: 80px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 49px;
+    font-weight: lighter;
+    font-family: "Roboto", "Helvetica", arial, sans-serif;
+}
+
+.middle-navigator:hover:after, .middle-navigator-active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #dd5347;
+}
+
+.middle-navigator-active, .middle-navigator:hover {
+    color: #dd5347;
+}

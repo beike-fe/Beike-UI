@@ -1,0 +1,91 @@
+#index {
+    overflow: hidden;
+
+    .login-button {
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        /*background-color: dodgerblue;*/
+        background-color: #dd5347;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        color: white;
+        transfrom: rotate(0deg);
+        will-change: transfrom;
+        transition: all 0.3s;
+    }
+
+    .navigator {
+        padding: 0;
+        width: 100%;
+        height: 50px;
+        left: 0;
+        top: 0;
+        box-shadow: 0 0 3px #333;
+        border-bottom: 1px solid whitesmoke;
+        position: fixed;
+        background-color: white;
+        z-index: 1000;
+
+        .right-menu {
+            position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            float: right;
+            width: 150px;
+            background-color: #dd5347;
+            /*background-color: dodgerblue;*/
+            height: 51px;
+            right: 0;
+            line-height: 50px;
+
+            .menu-title {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                color: white;
+                font-weight: normal;
+                font-size: 14px;
+            }
+        }
+
+        .left-menu {
+            width: 60px;
+            margin-left: 20px;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                margin: 10px 0 0 0;
+            }
+        }
+    }
+
+    .main-content {
+        left: 0;
+        margin: 0;
+        padding: 0;
+        background: url("assets/background.jpg") 0 0 no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+
+        .introduction {
+            color: white;
+            margin-top: 200px;
+            float: right;
+            margin-right: -500px;
+            font-size: 50px;
+            font-weight: lighter;
+            font-family: "Roboto", "Helvetica", arial, sans-serif;
+            transition: all 0.8s;
+        }
+    }
+
+    .blank-space {
+        width: 50px;
+    }
+
+}
