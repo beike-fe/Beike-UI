@@ -1,7 +1,6 @@
 <template>
     <div id="test">
         <!--<beike-top-menu :menuList="menuList">-->
-        <!--<img src="../assets/logo.png"/>-->
         <!--</beike-top-menu>-->
         <beike-button @click="myClick" type="primary" round shake>贝壳</beike-button>
         <beike-button type="warning" round hoverEffect>warning</beike-button>
