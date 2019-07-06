@@ -8,12 +8,13 @@
 ├── build   
 ├── config  
 ├── src  
-│   ├── App.vue     入口页面  
-│   ├── components  可复用组件  
-│   ├── core        核心功能代码  
-│   ├── main.js     主要配置  
+│   ├── components  可复用组件  
+│   ├── directive   自定义指令  
+│   ├── core        核心功能代码  
 │   ├── pages       页面  
-│   └── router      路由  
+│   ├── router      路由  
+│   ├── App.vue     入口页面  
+│   └── main.js     主要配置  
 ├── static  
 ├── index.html  
 ├── package-lock.json  
