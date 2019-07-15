@@ -1,4 +1,4 @@
-# Beike-button
+# Beike-toast
 
 ## API
 
@@ -12,5 +12,3 @@
 | @click | 点击按钮回调 | function |  |
 | @mouseover | 鼠标经过回调 | function |  |
 | @mouseleave | 鼠标离开回调 | function |  |
-
-备注：可以自己加 mouse 事件，这里只是因为抖动可能会覆盖。所以显式透出 mouseover 和 mouseleave 这两个事件

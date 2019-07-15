@@ -28,8 +28,10 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'components': resolve('src/components'),
-      'pages': resolve('src/pages'),
+      'beike-ui': resolve('src/components'),
       'core': resolve('src/core'),
+      'directive': resolve('src/directive'),
+      'pages': resolve('src/pages'),
     }
   },
   module: {

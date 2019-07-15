@@ -1,13 +1,12 @@
 <template>
     <div id="index">
-        <top-menu></top-menu>
         <div class="blank-space"></div>
         <div class="main-content">
             <div class="introduction">
                 <span>Welcome!</span><br />
-                <span>欢迎使用 Beiker-UI</span><br />
+                <span>欢迎使用 Beike-UI</span><br />
                 <span>体验更智能的组件</span><br />
-                <router-link to="/test">
+                <router-link to="/navigate">
                     <button class="login-button" @mouseover="hoverShake_copy($event,8,60)"
                             @mouseleave="shakeStatus = false">立即进入
                     </button>
@@ -18,13 +17,11 @@
 </template>
 
 <script>
-    import topMenu from 'components/top-menu/top-menu';
+
     import { debounce, throttle } from 'core/general';
 
     export default {
-        components: {
-            'top-menu': topMenu,
-        },
+
         name: 'index',
         data() {
             return {
@@ -80,8 +77,8 @@
                 let element = event.target || event.srcElement,
                     that = this,
                     direction = true,
-                    debounceShake = that.debounce(shake, time),
-                    throttleShake = that.throttle(shake, time);
+                    debounceShake = debounce(shake, time),
+                    throttleShake = throttle(shake, time);
 
                 that.$data.shakeStatus = true;
 
@@ -108,5 +105,4 @@
 
 <style lang="less">
     @import "./index";
-
 </style>
