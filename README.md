@@ -1,4 +1,4 @@
-# Beiker-ui
+# Beike-ui
 
 > A Ui project based on Vue.js
 > 一套为开发者准备的基于 Vue 2.0 的桌面端组件库
@@ -8,12 +8,13 @@
 ├── build   
 ├── config  
 ├── src  
-│   ├── App.vue     入口页面  
 │   ├── components  可复用组件  
+│   ├── directive   自定义指令  
 │   ├── core        核心功能代码  
-│   ├── main.js     主要配置  
 │   ├── pages       页面  
-│   └── router      路由  
+│   ├── router      路由   
+│   ├── App.vue     入口页面  
+│   └── main.js     主要配置  
 ├── static  
 ├── index.html  
 ├── package-lock.json  

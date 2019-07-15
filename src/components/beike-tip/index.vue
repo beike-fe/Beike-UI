@@ -1,6 +1,6 @@
 <template>
     <div class="tip-container">
-        <img src="./dialog.png" style="width: 250px">
+        <img src="assets/dialog.png" style="width: 250px">
         <div class="content">&nbsp;&nbsp;&nbsp;&nbsp;{{content}}</div>
         <div class="button-container">
             <el-button :type="type" plain size="small" @click="next">{{buttonText}}</el-button>
@@ -18,7 +18,7 @@
             },
             content: {
                 type: String,
-                default: 'ri',
+                default: '',
             },
             buttonText: {
                 type: String,
@@ -29,9 +29,6 @@
                 default: 'plain',
             },
         },
-        mounted() {
-
-        },
         methods: {
             next: function () {
                 this.$emit('next');
@@ -41,5 +38,5 @@
 </script>
 
 <style scoped>
-    @import 'beike-tip.less';
+    @import './index.less';
 </style>
