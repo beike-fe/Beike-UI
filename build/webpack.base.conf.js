@@ -30,6 +30,7 @@ module.exports = {
       'components': resolve('src/components'),
       'beike-ui': resolve('src/components'),
       'core': resolve('src/core'),
+      'data': resolve('src/data'),
       'directive': resolve('src/directive'),
       'pages': resolve('src/pages'),
     }

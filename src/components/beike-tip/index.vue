@@ -1,24 +1,28 @@
 <template>
-    <div class="tip-container">
-        <img src="assets/dialog.png" style="width: 250px">
-        <div class="content">&nbsp;&nbsp;&nbsp;&nbsp;{{content}}</div>
+    <div class="beike-tip">
+        <img src="https://s10.mogucdn.com/mlcdn/c45406/190715_3205l242cd65021e4gf3ik36i0kii_396x294.png"
+             style="width: 250px">
+        <div class="content">
+            <slot></slot>
+        </div>
         <div class="button-container">
-            <el-button :type="type" plain size="small" @click="next">{{buttonText}}</el-button>
+            <beike-button :type="type" plain @click="next">{{buttonText}}</beike-button>
         </div>
     </div>
 </template>
 
 <script>
+    import BeikeButton from 'components/beike-button/beike-button';
+
     export default {
         name: 'beike-tip',
+        components: {
+            BeikeButton,
+        },
         props: {
             direction: {
                 type: String,
                 default: 'right',
-            },
-            content: {
-                type: String,
-                default: '',
             },
             buttonText: {
                 type: String,
@@ -37,6 +41,6 @@
     };
 </script>
 
-<style scoped>
-    @import './index.less';
+<style lang="less">
+    @import 'index.less';
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div id="test">
+    <div id="beike-button">
         <beike-button @click="myClick" type="primary" round shake @mouseover="myMouseover">贝壳</beike-button>
         <beike-button type="warning" round hoverEffect>warning</beike-button>
         <beike-button hoverEffect>贝壳</beike-button>
@@ -8,35 +8,29 @@
 
 <script>
     import BeikeButton from 'components/beike-button/beike-button';
-    import BeikeTopMenu from 'components/beike-top-menu/beike-top-menu';
 
     export default {
-        name: 'test',
+        name: 'beike-button',
         components: {
             BeikeButton,
-            BeikeTopMenu,
         },
         methods: {
             myClick: function () {
-                console.log('click');
+                console.log('click event');
             },
             myMouseover: function () {
-                console.log('1');
+                console.log('mouseover event');
             },
         },
         data() {
-            return {
-                menuList: [
-                    '1111',
-                    '2222',
-                    '3333',
-
-                ],
-            };
+            return {};
         },
     };
 </script>
 
 <style scoped>
+    #beike-button {
+        margin-top: 50px;
+    }
 
 </style>
