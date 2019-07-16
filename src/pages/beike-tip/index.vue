@@ -1,19 +1,19 @@
 <template>
     <div id="beike-tip-test">
         <beike-tip>这是一条提示内容</beike-tip>
-        <beike-mask></beike-mask>
     </div>
 </template>
 
 <script>
-    import BeikeTip from 'components/beike-tip/index'
-    import BeikeMask from 'components/beike-mask/index';
+    import BeikeTip from 'components/beike-tip'
 
     export default {
         name: 'beike-tip-test',
         components: {
-            BeikeMask,
             BeikeTip
+        },
+        created(){
+
         },
         methods: {
 

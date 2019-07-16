@@ -1,21 +1,13 @@
 <template>
-    <button v-on:click="$emit('click')"
-            v-bind:class="classList"
-            v-on:mouseover="$props.shake ? hoverShake($event,8,60) : $emit('mouseover')"
-            v-on:mouseleave="$props.shake ? cancelShake() : $emit('mouseleave')"
-    >
-        <slot></slot>
-    </button>
+    <div class="beike-toast">
+
+    </div>
 </template>
 
 <script>
 
     export default {
-        name: 'beike-button',
-        props: {
-
-        },
-
+        name: 'beike-toast',
         data() {
             return {
 
@@ -28,7 +20,6 @@
         mounted() {
 
         },
-
     };
 </script>
 

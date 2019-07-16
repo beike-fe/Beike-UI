@@ -1,9 +1,10 @@
-import MaskComponent from './index.vue'// 引入写好的vue
+import MaskComponent from './index.vue'; // 引入 .vue 文件
 
 const Mask = {};
 
 // 注册Mask
 Mask.install = function ( Vue ) {
+
     // 生成一个Vue的子类
     const MaskConstructor = Vue.extend(MaskComponent);
     // 生成一个该子类的实例
@@ -14,11 +15,20 @@ Mask.install = function ( Vue ) {
     instance.$mount(document.createElement('div'));
     document.body.appendChild(instance.$el);
 
-    // 通过Vue的原型注册一个方法
-    // 让所有实例共享这个方法
-    Vue.prototype.$mask = ( msg ) => {
-        instance.visible = true;
+    const $mask = {
+        show: function () {
+            instance.visible = true;
+        },
+        hide: function () {
+            instance.visible = false;
+        },
+        getElement: function () {
+            return instance.$el;
+        },
     };
+
+    // 通过Vue的原型注册这个对象
+    Vue.prototype.$mask = $mask;
 };
 
 export default Mask;
