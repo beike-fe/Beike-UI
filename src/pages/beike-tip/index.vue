@@ -5,12 +5,15 @@
 </template>
 
 <script>
-    import BeikeTip from 'components/beike-tip/index'
+    import BeikeTip from 'components/beike-tip'
 
     export default {
         name: 'beike-tip-test',
         components: {
             BeikeTip
+        },
+        created(){
+
         },
         methods: {
 
