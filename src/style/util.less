@@ -1,0 +1,305 @@
+//display
+.hide {
+    display: none;
+}
+
+.d-ib {
+    display: inline-block;
+}
+
+.d-b {
+    display: block;
+}
+
+.c-po {
+    cursor: pointer;
+}
+
+//vertical align
+.va-tt {
+    vertical-align: text-top;
+}
+
+.va-bl {
+    vertical-align: baseline;
+}
+
+.va-s {
+    vertical-align: sub;
+}
+
+//text size
+.text-sm {
+    font-size: @font-size-sm;
+}
+
+.text-xs {
+    font-size: @font-size-xs;
+}
+
+.text-normal {
+    font-size: @font-size;
+}
+
+.text-lg {
+    font-size: @font-size-lg;
+}
+
+.text-md {
+    font-size: @font-size-md;
+}
+
+.wob-a {
+    word-break: break-all;
+}
+
+//font weight
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.font-smoothing {
+    -webkit-font-smoothing: antialiased;
+}
+
+.yahei {
+    font-family: @yahei;
+}
+
+//text color
+.text-color {
+    color: @color;
+}
+
+.text-white {
+    color: @color-white;
+}
+
+.text-dark {
+    color: @color-dark;
+}
+
+.text-light {
+    color: @color-light;
+}
+
+.text-red {
+    color: @color-red;
+}
+
+.text-lighter {
+    color: @color-lighter;
+}
+
+.text-info {
+    color: @info-color;
+}
+
+.text-success {
+    color: @success-color;
+}
+
+.text-primary {
+    color: @primary-color;
+}
+
+.text-warning {
+    color: @warning-color;
+}
+
+.text-error {
+    color: @error-color;
+}
+
+.text-disabled {
+    color: #ccc;
+}
+
+//text position
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.pos-r {
+    position: relative;
+}
+
+.pos-a {
+    position: absolute;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-fs {
+    justify-content: flex-start;
+}
+
+.jc-fe {
+    justify-content: flex-end;
+}
+
+.flex-g1 {
+    flex-grow: 1;
+}
+
+//不设置width，有被挤到下一行的风险,在左右排列是很有用
+.flex-1 {
+    flex-grow: 1;
+    width: 1px;
+}
+
+.flex-ba {
+    flex-basis: auto;
+}
+
+.block-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.o-a {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+.o-h {
+    overflow: hidden;
+}
+
+//height
+.h-m-full {
+    min-height: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+//width
+.w-full {
+    width: 100%
+}
+
+.loop( @count ) when ( @count > 0 ) {
+    .w-1-@{count} {
+        width: percentage(1/@count);
+    }
+    .loop((@count - 1));
+}
+
+.loop(10);
+
+
+//float
+.clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    *zoom: 1
+}
+
+//background
+.bg-white {
+    background-color: @bg-white;
+}
+
+.bg-light {
+    background-color: @bg-light;
+}
+
+.bg-lighter {
+    background-color: @bg-lighter;
+}
+
+.r-2 {
+    border-radius: 2px;
+}
+
+.r-3 {
+    border-radius: 3px;
+}
+
+.r-4 {
+    border-radius: 4px;
+}
+
+.r-8 {
+    border-radius: 8px;
+}
+
+.r-circle {
+    border-radius: 50%;
+}
+
+.b {
+    border: 1px solid @border-color;
+}
+
+.b-t {
+    border-top: 1px solid @border-color;
+}
+
+.b-b {
+    border-bottom: 1px solid @border-color;
+}
+
+.b-r {
+    border-right: 1px solid @border-color;
+}
+
+.b-l-n {
+    border-left: 0 none;
+}
+
+.b-r-n {
+    border-right: 0 none;
+}
+
+.b-l {
+    border-left: 1px solid @border-color;
+}
+
+.bs-da {
+    border-style: dashed !important;
+}
+
+.poe-n {
+    pointer-events: none;
+}

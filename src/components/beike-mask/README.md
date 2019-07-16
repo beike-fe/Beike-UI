@@ -1,4 +1,4 @@
-# Beike-button
+# Beike-mask
 
 ## API
 
@@ -12,6 +12,3 @@
 | @click | 点击按钮回调 | function |  |
 | @mouseover | 鼠标经过回调 | function |  |
 | @mouseleave | 鼠标离开回调 | function |  |
-
-## 备注
-这里因为抖动用到了 mouseover 和 mouseleave 事件。所以显式透出这两个事件。不会影响其他 mouse 事件的添加。
