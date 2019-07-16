@@ -11,10 +11,10 @@
 │   ├── components  可复用组件  
 │   ├── directive   自定义指令  
 │   ├── core        核心功能代码  
-│   ├── data        数据  
+│   ├── data        数据  
 │   ├── pages       页面  
 │   ├── router      路由   
-│   ├── style       全局样式   
+│   ├── style       全局样式      
 │   ├── App.vue     入口页面  
 │   └── main.js     主要配置  
 ├── static  
