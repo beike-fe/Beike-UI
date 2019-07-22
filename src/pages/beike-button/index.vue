@@ -1,16 +1,16 @@
 <template>
-    <div id="beike-button">
+    <div id="beike-button-test">
         <beike-button @click="myClick" type="primary" round shake @mouseover="myMouseover">贝壳</beike-button>
         <beike-button type="warning" round hoverEffect>warning</beike-button>
-        <beike-button hoverEffect>贝壳</beike-button>
+        <beike-button>贝壳</beike-button>
     </div>
 </template>
 
 <script>
-    import BeikeButton from 'components/beike-button/beike-button';
+    import BeikeButton from 'components/beike-button';
 
     export default {
-        name: 'beike-button',
+        name: 'beike-button-test',
         components: {
             BeikeButton,
         },
@@ -29,7 +29,7 @@
 </script>
 
 <style scoped>
-    #beike-button {
-        margin-top: 50px;
+    #beike-button-test {
+        margin: 50px;
     }
 </style>

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import BeikeButton from 'components/beike-button/beike-button';
+    import BeikeButton from 'components/beike-button';
 
     export default {
         name: 'beike-tip',

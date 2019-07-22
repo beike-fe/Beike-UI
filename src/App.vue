@@ -12,7 +12,3 @@
         components: { TopMenu },
     };
 </script>
-
-<style>
-
-</style>
