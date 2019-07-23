@@ -8,8 +8,10 @@
         props: {
             weather: {
                 type: String,
-                required: true,
                 default: 'sunny',
+                validator: function (value) {
+                    return ['sunny', 'cloudy', 'rainy', 'snowy'].indexOf(value) !== -1;
+                }
             },
         },
         mounted() {
@@ -19,6 +21,7 @@
             addWeatherStyle() {
                 let { beikeWeather } = this.$refs;
                 let weather = this.weather;
+                beikeWeather.classList.add('will-change');
                 beikeWeather.classList.add(weather);
             },
         },
