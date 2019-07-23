@@ -26,7 +26,6 @@
         data() {
             return {
                 shakeStatus: false,
-
             };
         },
         mounted() {
@@ -70,7 +69,7 @@
                 }
 
                 setTimeout(shake(element, true, deg, time), time);
-                
+
             },
 
             //使用封装节流函数的抖动
