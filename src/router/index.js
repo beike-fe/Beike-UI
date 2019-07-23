@@ -5,6 +5,7 @@ import navigate from 'pages/navigate/index'
 import beikeButton from 'pages/beike-button/index'
 import beikeTip from 'pages/beike-tip/index'
 import beikeWeather from 'pages/beike-weather/index'
+import beikeHeart from 'pages/beike-heart/index'
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
             path: '/beike-weather',
             name: 'beikeWeather',
             component: beikeWeather
+        },
+        {
+            path: '/beike-heart',
+            name: 'beikeHeart',
+            component: beikeHeart
         }
     ]
 })
