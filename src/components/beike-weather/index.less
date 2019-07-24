@@ -1,10 +1,13 @@
+@weatherWidth: 180px;
+@weatherHeight: 180px;
+
 .beike-weather {
     position: relative;
     display: inline-block;
-    width: 180px;
-    height: 180px;
+    width: @weatherWidth;
+    height: @weatherHeight;
     background: #23b7e5;
-    border-radius: 8px;
+    border-radius: 5%;
 
     &.will-change{
         will-change: transform;
@@ -16,8 +19,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
+        width: 33%;
+        height: 33%;
         background: #F6D963;
         border-radius: 50%;
         box-shadow: 0 0 20px #ff0;
@@ -28,9 +31,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin: -45px 0 0 -45px;
-        width: 90px;
-        height: 90px;
+        margin: -25% 0 0 -25%;
+        width: 50%;
+        height: 50%;
         background: #FFEB3B;
         clip-path: polygon(
             50% 0%,
