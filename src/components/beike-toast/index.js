@@ -17,7 +17,6 @@ Toast.install = function ( Vue ) {
 
     const $toast = {
 
-
     };
 
     // 通过Vue的原型注册这个对象

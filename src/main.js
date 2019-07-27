@@ -4,6 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 
+
 import Mask from 'components/beike-mask'
 
 Vue.config.productionTip = false;
