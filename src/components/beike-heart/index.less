@@ -1,0 +1,61 @@
+@heartWidth: 50px;
+@heartHeight: 45px;
+
+.beike-heart {
+    position: relative;
+    width: @heartWidth;
+    height: @heartHeight;
+
+    &.empty {
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #dcdcdc;
+            border-radius: @heartHeight/2 @heartWidth/2 0 0;
+            transform-origin: 0 100%;
+            pointer-events: auto;
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            left: 0;
+            transform-origin: 100% 100%;
+            transform: rotate(45deg);
+        }
+    }
+
+    &.full {
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #fc2e5a;
+            border-radius: @heartHeight/2 @heartWidth/2 0 0;
+            transform-origin: 0 100%;
+            pointer-events: auto;
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            left: 0;
+            transform-origin: 100% 100%;
+            transform: rotate(45deg);
+        }
+    }
+
+}

@@ -1,6 +1,6 @@
 <template>
-    <div id="beike-sider">
-        <beike-sider></beike-sider>
+    <div class="main">
+        <beike-sider class="sider" @change="myClick"> </beike-sider>
     </div>
 </template>
 
@@ -22,5 +22,12 @@
 </script>
 
 <style scoped>
-
+    .main{
+        position:relative
+    }
+    .sider{
+        position:absolute;
+        left:0;
+        top:200px;
+    }
 </style>

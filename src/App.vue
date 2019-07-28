@@ -18,17 +18,17 @@
             myClick: function () {
                 console.log('click event');
             },
-    }}
+        }}
 </script>
 
 <style>
-.main{
-    position:relative
-}
-.sider{
-    position:absolute;
-    left:0;
-    top:500px;
-}
+    .main{
+        position:relative
+    }
+    .sider{
+        position:absolute;
+        left:0;
+        top:500px;
+    }
 
 </style>
