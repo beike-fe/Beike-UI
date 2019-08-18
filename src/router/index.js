@@ -7,6 +7,7 @@ import beikeTip from 'pages/beike-tip/index'
 import beikeWeather from 'pages/beike-weather/index'
 import beikeHeart from 'pages/beike-heart/index'
 import beikeSider from 'pages/beike-sider/index'
+import beikeDisplay from 'pages/beike-display/index'
 
 Vue.use(Router);
 
@@ -46,6 +47,11 @@ export default new Router({
             path: '/beike-sider',
             name: 'beikeSider',
             component: beikeSider
-        }
+        },
+        {
+            path: '/beike-display',
+            name: 'beikeDisplay',
+            component: beikeDisplay
+        },
     ]
 })

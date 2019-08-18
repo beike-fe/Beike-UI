@@ -58,6 +58,8 @@
                         path:"/tip"},
                     {name:"index",
                         path:"/"},
+                    {name:"display",
+                        path:"/beike-display"},
                 ],
                 expend: true,
                 table: false,
