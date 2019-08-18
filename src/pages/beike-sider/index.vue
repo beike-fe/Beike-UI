@@ -1,33 +1,33 @@
 <template>
     <div class="main">
-        <beike-sider class="sider" @change="myClick"> </beike-sider>
+        <beike-sider class="sider" @change="myClick"></beike-sider>
     </div>
 </template>
 
 <script>
-    import BeikeSider from "../../components/beike-sider/beike-sider";
+    import BeikeSider from '../../components/beike-sider/beike-sider';
+
     export default {
-        name: "index",
-        components: {BeikeSider},
-        created(){
+        name: 'index',
+        components: { BeikeSider },
+        created() {
 
         },
-        methods: {
-
-        },
+        methods: {},
         data() {
             return {};
         },
-    }
+    };
 </script>
 
 <style scoped>
-    .main{
-        position:relative
+    .main {
+        position: relative;
     }
-    .sider{
-        position:absolute;
-        left:0;
-        top:200px;
+
+    .sider {
+        position: absolute;
+        left: 0;
+        top: 50px;
     }
 </style>
