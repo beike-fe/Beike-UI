@@ -1,11 +1,11 @@
-//组合
+//两个函数组合
 function compose2( fn1, fn2 ) {
     return function ( x ) {
         return fn2(fn1(x));
     };
 }
 
-//组合
+//多函数组合
 function compose( ...fns ) {
     let result;
     return function composed( ...initParam ) {
