@@ -6,12 +6,12 @@
                     <slot></slot>
                 </div>
             </div>
-<!--            <div class="middle-menu">-->
-<!--                <div class="middle-navigator" v-for="(menu, key) in menuList" :key="key"-->
-<!--                     @click="handleClick($event,key)">-->
-<!--                    {{menu}}-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="middle-menu">
+                <div class="middle-navigator" v-for="(menu, key) in menuList" :key="key"
+                     @click="handleClick($event,key)">
+                    {{menu}}
+                </div>
+            </div>
             <div class="right-menu" v-if="backward" @click="goBack" style="cursor: pointer">
                 <div class="menu-title">
                     <span>返回</span>
