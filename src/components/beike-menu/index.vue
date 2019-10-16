@@ -1,8 +1,9 @@
 <template>
     <div>
+        <p ref="test"></p>
         <ul :id="'menu_'+Theme">
             <li :class="'menuItemLi_'+Theme"
-                :style="{height:((index == menuActive) ? liHeight:baseLiHeight)+'rem',width:getWidth}"
+                :style="{height:((index == menuActive) ? liHeight:baseLiHeight)+'rem'}"
                 v-for="(item,index) in MenuList">
                 <p :class="[ 'menuItem_'+Theme,(index == menuActive ? 'activeFontColor':'')]"
                    @click="handleClick(index)">{{ item.menuName }}</p>
@@ -10,7 +11,7 @@
                     <transition name="slide">
                         <template v-if="menuActive == index">
                             <ul>
-                                <li v-for="(subItem,subIndex) in item.subMenu">
+                                <li v-for="(subItem,subIndex) in item.subMenu" ref="subLi">
                                     <p :class="[(subIndex == subMenuActive)?'activeFontColor':'','subMenuItem_'+Theme]"
                                        @click="handleSubMenuClick(subIndex)">
                                         {{subItem.submenuName }}</p>
@@ -173,19 +174,14 @@
                 }
                 this.liHeight += 0.1;
                 // el.style.height = (this.liHeight) + 'rem';
-                this.$forceUpdate();//强制刷新
                 setInterval(this.addActive(num), this.subItemStretchTime);
             },
             removeActive: function () {
-                // let heightPx = window.getComputedStyle(el).height;
-                // let height = parseInt(heightPx, 10);
                 if (this.liHeight <= this.baseLiHeight) {
-                    console.log('before');
                     this.menuActive = -1;
                     return;
                 }
                 this.liHeight -= 0.1;
-                this.$forceUpdate();
                 setInterval(this.removeActive(), this.subItemStretchTime);
             },
             // initLiHeight:function (  ) {
@@ -219,6 +215,7 @@
 
         },
         mounted() {
+            console.log(this.$refs.test);
 
             this.initLisHeight();
             this.initDefaultActive();
@@ -357,7 +354,7 @@
                     height: 3rem;
                     width: 100%;
                     padding-top: 0.8rem;
-                    transition: 0.4s background-color ease-in-out;
+                    transition: 0.3s all ease-in-out;
 
                     &:hover {
                         background-color: getHoverColor($theme);
@@ -371,7 +368,7 @@
                     padding-left: 1.5rem;
                     font-size: 0.9rem;
                     font-weight: lighter;
-                    transition: 0.4s background-color ease-in-out;
+                    transition: 0.3s all ease-in-out;
 
 
                     &:hover {

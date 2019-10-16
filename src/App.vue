@@ -22,4 +22,7 @@
         box-sizing: border-box;
         cursor: default;
     }
+    #app{
+        overflow: hidden;
+    }
 </style>
