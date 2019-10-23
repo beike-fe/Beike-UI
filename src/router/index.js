@@ -9,6 +9,7 @@ import beikeHeart from 'pages/beike-heart/index';
 import beikeMenu from '../pages/beike-menu/index';
 import beikeMessageBox from '../pages/beike-messageBox/index';
 
+
 Vue.use(Router);
 
 export default new Router({

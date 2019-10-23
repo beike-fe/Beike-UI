@@ -5,9 +5,11 @@ import App from './App';
 import router from './router';
 
 import Mask from 'components/beike-mask'
+import MessageBox from 'components/beike-messageBox/message_box'
 
 Vue.config.productionTip = false;
 Vue.use(Mask);
+Vue.use(MessageBox);
 
 /* eslint-disable no-new */
 new Vue({

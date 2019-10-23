@@ -1,6 +1,5 @@
 <template>
     <div>
-        <p ref="test"></p>
         <ul :id="'menu_'+Theme">
             <li :class="'menuItemLi_'+Theme"
                 :style="{height:((index == menuActive) ? liHeight:baseLiHeight)+'rem'}"
@@ -215,7 +214,6 @@
 
         },
         mounted() {
-            console.log(this.$refs.test);
 
             this.initLisHeight();
             this.initDefaultActive();
@@ -282,7 +280,6 @@
     }
 
     .slide-enter, .slide-leave-to {
-        opacity: 0%;
         height: 0px;
         overflow: hidden;
     }

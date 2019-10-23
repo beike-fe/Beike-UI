@@ -4,13 +4,16 @@
         <div class="main-content">
             <div class="navigator-group">
 
-
+                <button @click="test">1321jh 3531</button>
             </div>
         </div>
+
     </div>
 </template>
 
 <script>
+
+
     export default {
         name: 'index',
         data() {
@@ -18,6 +21,18 @@
 
             };
         },
+        methods:{
+            test:function (  ) {
+                let _this = this;
+                console.log(123);
+                this.$msgBOX({
+                    header:"头部分"
+                }).then(function ( e ) {
+                    alert(e);
+                });
+                console.log(123);
+            }
+        }
     };
 </script>
 
