@@ -11,7 +11,7 @@ const defaultProps = {
     contentAlign:"center",
     confirmText: "确认",
     cancelText: "取消",
-    operatorAlign:"center",
+    operatorAlign:"end",
     confirmCallback: function(){
         alert("点此确认");
     },
@@ -31,15 +31,12 @@ let config = defaultProps;
 // }
 function initialize(props){
     const messageClass = Vue.extend(templateMessageBox);//拓展的类
-
-    console.log(instance.$el);
-    instance = new messageClass({
-        propsData:defaultProps
-    });
-    console.log(instance.$el);
     for(let prop in props){
-        instance[prop] = props[prop];
+        config[prop] = props[prop];
     }
+    instance = new messageClass({
+        propsData:config
+    });
     console.log("initilize Component");
     instance.$mount();
     document.body.appendChild(instance.$el);
@@ -59,9 +56,7 @@ MessageBox.install =function ( Vue ) {
     };
 
     Vue.prototype.$msgBOXHide = function (  ) {
-        // instance.visible=false;
-        // instance.propsData.header="改变了";
-        document.body.removeChild(instance.$el);
+        instance.visible=false;
     };
 
 };

@@ -6,8 +6,10 @@
 
                 <button @click="test">1321jh 3531</button>
             </div>
+            <div v-drag style="width: 50px;height: 50px;background-color: #333333">
+                <p>test</p>
+            </div>
         </div>
-
     </div>
 </template>
 

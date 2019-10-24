@@ -6,9 +6,9 @@
 <template>
     <transition name="fadeIn">
         <div id="message_bg" v-if="visible">
-            <div id="message_body">
-                <div id="message_header" :class="['f_row','al_baseline','jc_'+headerAlign]">
-                    <p>{{ header }}</p>
+            <div id="message_body"  @mousemove="changePosition" @mouseup="endMoving" ref="msgBody">
+                <div id="message_header"  @mousedown="startMoving" :class="['f_row','al_baseline','jc_'+headerAlign]">
+                    <p >{{ header }}</p>
                 </div>
                 <div class="line"></div>
                 <div id="message_content":class="['al_center','jc_'+contentAlign]">
@@ -20,7 +20,7 @@
                             {{ confirmText }}
                         </beike-button>
                     </div>
-                    <div :class="['message_operator']">
+                    <div v-if="cancelText" :class="['message_operator']">
                         <beike-button  @click="handleCancel">
                             {{ cancelText }}
                         </beike-button>
@@ -60,7 +60,7 @@
             },
             cancelText: {
                 type: String,
-                default: '取消',
+                default: '',
             },
             operatorAlign:{
                 type:String,
@@ -90,6 +90,10 @@
         data() {
             return {
                 visible: false,
+                x:0,
+                y:0,
+                node:null,
+                isMove:false
             };
         },
         methods:{
@@ -109,7 +113,32 @@
             },
             close:function (  ) {
                 this.visible = false;
-            }
+            },
+            startMoving:function ( e ) {
+                let nodeStyle = window.getComputedStyle(this.$refs.msgBody);
+
+                //初始化相对距离
+                //设置可以进行移动
+                this.startXDis = e.clientX - parseInt(nodeStyle.left);
+                this.startYDis = e.clientY - parseInt(nodeStyle.top);
+                this.isMove = true;
+            },
+            changePosition:function ( e ) {
+                document.onmouseup = () =>{
+                    this.isMove = false;
+                };
+                if(this.isMove){
+                    console.log(e.clientX);
+                    this.x = e.clientX - this.startXDis;
+                    this.y = e.clientY - this.startYDis;
+                    let node = this.$refs.msgBody;
+                    node.style.left = this.x + 'px';
+                    node.style.top = this.y + 'px';
+                }
+            },
+            endMoving:function (  ) {
+                this.isMove = false;
+            },
         }
     };
 </script>
@@ -129,38 +158,7 @@
     }
 </style>
 <style lang="scss">
-    $start:start;
-    $center:center;
-    $end:end;
-    @each $p in $start,$end{
-        .al_#{$p}{
-            align-items: flex-#{$p};
-        }
-    }
-    .al_#{$center}{
-        align-items: #{$center};
-    }
-    .al_baseline{
-        align-items: baseline;
-    }
-
-
-    @each $p in $start,$end{
-        .jc_#{$p}{
-            justify-content: flex-#{$p};
-        }
-    }
-    .jc_#{$center}{
-        justify-content: center;
-    }
-    .f_row{
-        display: flex;
-    }
-    .f_column{
-        display: flex;
-        flex-direction: column;
-    }
-
+    @import "flex_layout";
     #message_bg {
         position: fixed;
         top: 0;
@@ -168,7 +166,6 @@
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.3);
-
         #message_body {
             position: fixed;
             width: 25rem;
@@ -189,6 +186,8 @@
                 height: 20%;
                 padding: 0.3rem;
                 width: 100%;
+                user-select: none;
+                cursor: move;
                 /*align-self: flex-start;*/
             }
             .line{
