@@ -1,13 +1,16 @@
 <template>
-    <div id="navigate">
+    <div id="navigate"  >
         <div class="blank-space"></div>
-        <div class="main-content">
+        <div class="main-content" >
             <div class="navigator-group">
 
                 <button @click="test">1321jh 3531</button>
             </div>
-            <div v-drag style="width: 50px;height: 50px;background-color: #333333">
-                <p>test</p>
+            <div id="xxx" v-loading="{visible:visible,loadingStyle:'point'}" style="height: 100px;width: 100px;background-color: #66b1ff;">
+                {{ visible }}
+            </div>
+            <div id="xxxx" style="height: 100px;width: 100px;background-color: #66b1ff;">
+
             </div>
         </div>
     </div>
@@ -20,20 +23,22 @@
         name: 'index',
         data() {
             return {
-
+                visible:true
             };
         },
         methods:{
             test:function (  ) {
-                let _this = this;
-                console.log(123);
-                this.$msgBOX({
-                    header:"头部分"
-                }).then(function ( e ) {
-                    alert(e);
+                this.$bkLoading.show({
+                    target:document.getElementById('xxx')
                 });
-                console.log(123);
             }
+        },
+        mounted() {
+            let _this = this;
+            setTimeout(function (  ) {
+                _this.visible = false;
+                console.log('false');
+            },5000)
         }
     };
 </script>

@@ -1,0 +1,137 @@
+$currentColor: #66b1ff ;
+$showHeight: 50px;
+$showWidth: 50px;
+$pointRotateWidth: 10px;
+$pointWidth: 6px;
+@function getHalf($temp) {
+  @return $temp/2;
+}
+
+
+.clockAnimation {
+  animation: clock 2s infinite linear;
+}
+
+@keyframes clock {
+0% {
+transform: rotate(0deg) scale(0.5);
+}
+50%{
+transform: rotate(180deg) scale(1);
+}
+100% {
+transform: rotate(360deg) scale(0.5);
+}
+}
+
+
+#loadingBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 555;
+  P{
+    color: #66b1ff;
+    letter-spacing: 2px;
+}
+  .loadingShow {
+    position: relative;
+    width: $showWidth;
+    height: $showHeight;
+    overflow: hidden;
+
+    /*point型的css*/
+    .point {
+      left: 50%;
+      height: $showHeight;
+      width: $pointRotateWidth;
+      position: absolute;
+      left: 50%;
+      margin-left: -+getHalf($pointRotateWidth);
+  }
+
+    .point:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: $pointWidth;
+      height: $pointWidth;
+      margin-left: -+getHalf($pointWidth);
+      border-radius: 50%;
+      background-color: #66b1ff;
+  }
+
+
+    /*line型的css*/
+    /*对外层元素进行旋转，而非对伪元素进行旋转*/
+    .outer{
+      animation: clockWise 2s infinite linear;
+      &::after{
+        width: 100%;
+        height: 100%;
+    }
+  }
+    .middle{
+      animation: antiClockWise 2s infinite linear;
+      &::after{
+        width: 80%;
+        height: 80%;
+    }
+  }
+    .inner{
+      animation: clockWise 2s infinite linear;
+      &::after{
+        height: 60%;
+        width: 60%;
+    }
+  }
+
+    //三个圈的基本属性
+    //将伪元素移动到父元素的中心
+    .outer,
+    .middle,
+    .inner{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      &::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        border-left: 5px solid $currentColor;
+        border-right: 5px solid $currentColor ;
+        border-top: 5px solid $currentColor;
+        border-bottom: 5px solid transparent;
+    }
+  }
+}
+}
+
+//顺时针选择动画
+@keyframes clockWise {
+0%{
+transform: rotate(0deg);
+}
+100%{
+transform: rotate(360deg);
+}
+}
+
+//逆时针旋转动画
+@keyframes antiClockWise {
+0%{
+transform: rotate(360deg);
+}
+100%{
+transform: rotate(0deg);
+}
+}

@@ -22,6 +22,9 @@
         box-sizing: border-box;
         cursor: default;
     }
+    *::after,*::before{
+        box-sizing: border-box;
+    }
     #app{
         overflow: hidden;
     }
