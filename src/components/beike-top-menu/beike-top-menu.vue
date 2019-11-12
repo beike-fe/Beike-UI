@@ -69,7 +69,7 @@
 </script>
 
 <style lang="less">
-    @import './beike-top-menu.css';
+    @import 'beike-top-menu.css';
 
     .navigator {
         padding: 0;

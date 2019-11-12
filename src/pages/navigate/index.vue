@@ -3,15 +3,9 @@
         <div class="blank-space"></div>
         <div class="main-content" >
             <div class="navigator-group">
-
                 <button @click="test">1321jh 3531</button>
             </div>
-            <div id="xxx" v-loading="{visible:visible,loadingStyle:'point'}" style="height: 100px;width: 100px;background-color: #66b1ff;">
-                {{ visible }}
-            </div>
-            <div id="xxxx" style="height: 100px;width: 100px;background-color: #66b1ff;">
-
-            </div>
+            <bk-date-picker @getResult="getDate"></bk-date-picker>
         </div>
     </div>
 </template>
@@ -31,14 +25,21 @@
                 this.$bkLoading.show({
                     target:document.getElementById('xxx')
                 });
+            },
+            getDate:function ( result ) {
+                console.log(result)
+                alert(result);
             }
         },
         mounted() {
-            let _this = this;
-            setTimeout(function (  ) {
-                _this.visible = false;
-                console.log('false');
-            },5000)
+            //date的周天是0
+            //创建时用
+            let date = new Date(2019,10,10);
+            console.log(date.getDate());
+            console.log(date.getDay());
+            let date1 = new Date(2019,10,-5);
+            console.log(date1.getDate());
+            console.log(date1.getDay());
         }
     };
 </script>

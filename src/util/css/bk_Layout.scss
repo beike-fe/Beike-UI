@@ -1,0 +1,36 @@
+$start:start;
+$center:center;
+$end:end;
+@each $p in $start,$end{
+  .al_#{$p}{
+    align-items: flex-#{$p};
+  }
+}
+.al_#{$center}{
+  align-items: #{$center};
+}
+.al_baseline{
+  align-items: baseline;
+}
+
+
+@each $p in $start,$end{
+  .jc_#{$p}{
+    justify-content: flex-#{$p};
+  }
+}
+.jc_#{$center}{
+  justify-content: center;
+}
+.jc_between{
+  justify-content: space-between;
+}
+
+
+.f_row{
+  display: flex;
+}
+.f_column{
+  display: flex;
+  flex-direction: column;
+}
